@@ -10,3 +10,4 @@ git remote add origin https://github.com/observer75/StudyJava.git
 git remote
 git fetch https://github.com/observer75/StudyJava.git
 git remote add origin https://github.com/observer75/StudyJava.git
+git --version

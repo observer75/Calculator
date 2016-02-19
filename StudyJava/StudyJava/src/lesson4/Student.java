@@ -11,6 +11,12 @@ public class Student {
 		this.Married = Married;
 	}
 	
+	Student(){
+		Age = 18;
+		Name = "Empty";
+		Married = false;
+	}
+	
 	public void getStudentAge() {
 		System.out.println(Age);
 	}

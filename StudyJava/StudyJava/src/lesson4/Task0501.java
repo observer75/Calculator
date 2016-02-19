@@ -13,5 +13,15 @@ public class Task0501 {
 		System.out.println(Casio.multiply());
 		System.out.println(Casio.divide());
 		//System.out.println("OK");
+		Student Ivan = new Student(20, "Ivan", false);
+		
+		Student Pavlo = new Student();
+		Ivan.getStudentAge();
+		Ivan.getStudentName();
+		Ivan.getStudentMaritalStatus();
+		
+		Pavlo.getStudentAge();
+		Pavlo.getStudentName();
+		Pavlo.getStudentMaritalStatus();
 	}
 }
