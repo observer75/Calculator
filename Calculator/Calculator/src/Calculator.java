@@ -21,6 +21,8 @@ public class Calculator {
 
 	private JFrame frame;
 	private JTextField textField;
+	private static double a1;
+	private static double b1;
 
 	/**
 	 * Launch the application.
@@ -30,6 +32,7 @@ public class Calculator {
 			public void run() {
 				try {
 					Calculator window = new Calculator();
+					Calculator_f fcalc = new Calculator_f(a1, b1);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,43 +58,49 @@ public class Calculator {
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-//		textField.setText("0");
 		textField.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		textField.setEditable(false);
 		textField.setBounds(26, 11, 332, 67);
+		textField.setText("0");
 		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		textField.setColumns(15);
 		
 		JButton button_1 = new JButton("1");
+		button_1.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+			}
+		});
 		button_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				//if (textField.getText() == "0") {
-				//	textField.setText("1");
-				//} 
+				//System.out.println(textField.getText());
+				//try {
+				Double zero = Double.parseDouble(textField.getText());
+								//System.out.println(zero);
+				if (zero == 0){
+					textField.setText("1");
+					//System.out.println(textField.getText() + "A");
+					//textField.setText(textField.getText() + "1");
+				} else textField.setText(textField.getText() + "1");
+				//} catch (Exception e) {
+				//	e.printStackTrace();
+				//}
+				//textField.setText(textField.getText() + "1");
+				//System.out.println(textField.getText());
 				
 				//if (textField.getText() != "0") {
 				//textField.setText(textField.getText() + "1");
 				//}
-				textField.setText(textField.getText() + "1");
+				//textField.setText(textField.getText() + "1");
+				
+				//textField.setText(Double.toString(a1));
 //				String b = textField.getText() + "1";
 //				String a = "";
-				
+//				
 		}
 		});
-		button_1.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if (textField.getText() == "0") {
-					textField.setText("2");
-				}
-				textField.setText(textField.getText() + "2");
-			}
-		});
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
 		button_1.setBounds(26, 89, 74, 33);
 		frame.getContentPane().add(button_1);
 		
@@ -99,8 +108,10 @@ public class Calculator {
 		button_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			//textField.setText("");
-			textField.setText(textField.getText() + "2");
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("2");
+				} else textField.setText(textField.getText() + "2");
 			}
 		});
 		button_2.addActionListener(new ActionListener() {
@@ -114,8 +125,11 @@ public class Calculator {
 		button_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//textField.setText("");
-				textField.setText(textField.getText() + "3");
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("3");
+				} else textField.setText(textField.getText() + "3");
+
 			}
 		});
 		button_3.setBounds(196, 89, 76, 33);
@@ -125,8 +139,10 @@ public class Calculator {
 		button_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//textField.setText("");
-				textField.setText(textField.getText() + "4");
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("2");
+				} else textField.setText(textField.getText() + "4");
 			}
 		});
 		button_4.setBounds(26, 133, 76, 33);
@@ -136,8 +152,10 @@ public class Calculator {
 		button_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//textField.setText("");
-				textField.setText(textField.getText() + "5");
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("5");
+				} else textField.setText(textField.getText() + "5");
 			}
 		});
 		button_5.setBounds(110, 133, 76, 33);
@@ -147,8 +165,10 @@ public class Calculator {
 		button_6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//textField.setText("");
-				textField.setText(textField.getText() + "6");
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("6");
+				} else textField.setText(textField.getText() + "6");
 			}
 		});
 		button_6.setBounds(196, 133, 76, 33);
@@ -158,8 +178,11 @@ public class Calculator {
 		button_7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//textField.setText("");
-				textField.setText(textField.getText() + "7");
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("7");
+				} else textField.setText(textField.getText() + "7");
+
 			}
 		});
 		button_7.setBounds(26, 177, 76, 33);
@@ -169,8 +192,10 @@ public class Calculator {
 		button_8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//textField.setText("");
-				textField.setText(textField.getText() + "8");
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("8");
+				} else textField.setText(textField.getText() + "8");
 			}
 		});
 		button_8.setBounds(110, 177, 76, 33);
@@ -180,14 +205,25 @@ public class Calculator {
 		button_9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//textField.setText("");
-				textField.setText(textField.getText() + "9");
-			}
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("9");
+				} else textField.setText(textField.getText() + "9");
+		}
 		});
 		button_9.setBounds(196, 177, 76, 33);
 		frame.getContentPane().add(button_9);
 		
 		JButton button_0 = new JButton("0");
+		button_0.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("0");
+				} else textField.setText(textField.getText() + "0");
+			}
+		});
 		button_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -196,6 +232,15 @@ public class Calculator {
 		frame.getContentPane().add(button_0);
 		
 		JButton button_comma = new JButton(",");
+		button_comma.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Double zero = Double.parseDouble(textField.getText());
+				if (zero == 0){
+					textField.setText("0.");
+				} else textField.setText(textField.getText() + ".");
+			}
+		});
 		button_comma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -237,6 +282,7 @@ public class Calculator {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				textField.setText(textField.getText() + " + ");
+				a1 = Double.parseDouble(textField.getText()); 
 			}
 		});
 		button_plus.setBounds(282, 221, 76, 33);
@@ -246,7 +292,7 @@ public class Calculator {
 		button_equal.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-//				textField.setText(textField.getText() + " = ");
+				textField.setText(textField.getText() + " = ");
 			}
 		});
 		button_equal.setBounds(196, 265, 162, 33);
@@ -262,6 +308,5 @@ public class Calculator {
 		button_esc.setBounds(26, 265, 160, 33);
 		frame.getContentPane().add(button_esc);
 		frame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{textField, button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_0, button_comma, button_divide, button_multiply, button_minus, button_plus, button_equal, button_esc}));
-		
 	}
 }
